@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f4">
+    <meta name="description" content="Die persönliche Startseite von Lennard Müller – Geoinformatik und Vermessung in Mainz.">
+    <title>Lennard Müller – Persönliche Startseite</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --background: #f7f7f4;
+            --surface: #ffffff;
+            --text: #202925;
+            --muted: #56645d;
+            --accent: #176b58;
+            --line: #dce3dd;
+            --soft: #eaf1ec;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        a:focus-visible {
+            outline: 3px solid #a24d19;
+            outline-offset: 4px;
+            border-radius: 3px;
+        }
+
+        .page {
+            width: min(100% - 2.5rem, 1080px);
+            margin-inline: auto;
+        }
+
+        header {
+            padding-block: clamp(3.5rem, 9vw, 7rem) 2.75rem;
+        }
+
+        .eyebrow {
+            margin: 0 0 0.75rem;
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 750;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            max-width: 760px;
+            margin-bottom: 1rem;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            letter-spacing: -0.055em;
+            line-height: 1.05;
+        }
+
+        .intro {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        main {
+            padding-bottom: 5rem;
+        }
+
+        section {
+            margin-top: clamp(3rem, 7vw, 5.5rem);
+        }
+
+        .section-heading {
+            margin-bottom: 1.25rem;
+        }
+
+        h2 {
+            margin-bottom: 0.35rem;
+            font-size: clamp(1.6rem, 3vw, 2.15rem);
+            letter-spacing: -0.035em;
+            line-height: 1.2;
+        }
+
+        .section-note {
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            clip-path: inset(50%);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--surface);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        caption {
+            padding: 0;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--soft);
+            color: #30463b;
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        td:first-child {
+            min-width: 125px;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        td:last-child {
+            color: var(--muted);
+        }
+
+        .portrait-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+            align-items: center;
+            gap: clamp(1.5rem, 5vw, 4rem);
+        }
+
+        .portrait-layout p {
+            max-width: 470px;
+            color: var(--muted);
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        .portrait {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--soft);
+        }
+
+        .portrait img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+
+        figcaption {
+            padding: 0.7rem 0.9rem;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--surface);
+            color: inherit;
+            text-decoration: none;
+            transition: transform 160ms ease, box-shadow 160ms ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgb(32 41 37 / 9%);
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            background: var(--soft);
+        }
+
+        .card-copy {
+            padding: 1rem 1rem 1.1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.35rem;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+
+        .card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        footer {
+            padding-block: 1.5rem 2rem;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 700px) {
+            .portrait-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait {
+                max-width: 480px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                width: min(100% - 1.5rem, 1080px);
+            }
+
+            th,
+            td {
+                padding: 0.75rem;
+            }
+
+            table {
+                min-width: 600px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <p class="eyebrow">Persönliche Startseite</p>
+            <h1>Hallo, ich bin Lennard.</h1>
+            <div class="intro">
+                <p>Ich studiere Geoinformatik und Vermessung an der Hochschule Mainz. Mich begeistert, wie sich Orte, Landschaften und Daten auf Karten zusammenbringen lassen.</p>
+                <p>Vor meinem Studium war ich für Work and Travel in Japan. Hier findest du einen kurzen Überblick über meinen bisherigen Weg und Themen, die mich interessieren.</p>
+            </div>
+        </header>
+
+        <main>
+            <section aria-labelledby="weg-heading">
+                <div class="section-heading">
+                    <p class="eyebrow">Mein Weg</p>
+                    <h2 id="weg-heading">Sechs Stationen</h2>
+                    <p class="section-note">Ein kurzer Überblick von der Schulzeit bis heute.</p>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <caption class="visually-hidden">Stationen in Lennards bisherigem Werdegang</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Jahr</th>
+                                <th scope="col">Station</th>
+                                <th scope="col">Ort</th>
+                                <th scope="col">Stichwort</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>bis 2022</td>
+                                <td>Schulzeit</td>
+                                <td>Gelnhausen</td>
+                                <td>Grimmelshausen-Gymnasium</td>
+                            </tr>
+                            <tr>
+                                <td>2022</td>
+                                <td>Abitur</td>
+                                <td>Gelnhausen</td>
+                                <td>Schulabschluss</td>
+                            </tr>
+                            <tr>
+                                <td>2022–2024</td>
+                                <td>Work and Travel</td>
+                                <td>Japan</td>
+                                <td>Reisen und neue Perspektiven</td>
+                            </tr>
+                            <tr>
+                                <td>2024</td>
+                                <td>Studienbeginn</td>
+                                <td>Mainz</td>
+                                <td>Neues Kapitel</td>
+                            </tr>
+                            <tr>
+                                <td>2024–heute</td>
+                                <td>Geoinformatik studieren</td>
+                                <td>Hochschule Mainz</td>
+                                <td>Geodaten</td>
+                            </tr>
+                            <tr>
+                                <td>Heute</td>
+                                <td>Geoinformatik und Vermessung</td>
+                                <td>Mainz</td>
+                                <td>Karten und Vermessung</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section aria-labelledby="portrait-heading">
+                <div class="portrait-layout">
+                    <div>
+                        <p class="eyebrow">Über mich</p>
+                        <h2 id="portrait-heading">Unterwegs zwischen Orten und Daten.</h2>
+                        <p>Mein Weg führte mich von Gelnhausen über Japan nach Mainz. Heute verbinde ich im Studium meine Neugier auf die Welt mit Geoinformatik und Vermessung.</p>
+                    </div>
+                    <figure class="portrait">
+                        <img src="assets/me.jpg" alt="Lennard Müller" loading="lazy">
+                        <figcaption>Lennard Müller</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section aria-labelledby="gallery-heading">
+                <div class="section-heading">
+                    <p class="eyebrow">Zum Weiterstöbern</p>
+                    <h2 id="gallery-heading">Themen, die mich interessieren</h2>
+                    <p class="section-note">Drei Anlaufstellen rund um Karten, Geodaten und mein Studienfach.</p>
+                </div>
+                <div class="gallery">
+                    <a class="card" href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://images.unsplash.com/photo-1524666041070-9a87656c25bb?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Karte und Kompass auf einer Karte" loading="lazy">
+                        <div class="card-copy">
+                            <h3>OpenStreetMap</h3>
+                            <p>Eine offene Weltkarte, die von Menschen überall auf der Welt gepflegt wird.</p>
+                        </div>
+                    </a>
+                    <a class="card" href="https://qgis.org/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Landschaft mit Bergen und See" loading="lazy">
+                        <div class="card-copy">
+                            <h3>QGIS</h3>
+                            <p>Freie Software, um räumliche Daten zu erkunden und Karten zu gestalten.</p>
+                        </div>
+                    </a>
+                    <a class="card" href="https://www.hs-mainz.de/" target="_blank" rel="noopener noreferrer">
+                        <img src="https://images.unsplash.com/photo-1518005020951-eccf4ba6b4c3?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Moderne Architektur im Stadtraum" loading="lazy">
+                        <div class="card-copy">
+                            <h3>Hochschule Mainz</h3>
+                            <p>Hier studiere ich Geoinformatik und Vermessung.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© Lennard Müller</p>
+        </footer>
+    </div>
+</body>
+</html>
