@@ -1,0 +1,24 @@
+[
+  {
+    "date": "2026-10-13",
+    "title": "Meenzer Metaxa",
+    "summary": "Heute wurde in der eigenen Küche ein Auflauf deutsch-griechischer Art zubereitet. Nudeln, Hühnchen, Gemüse, Metaxasauce und Käse: EInfach lecker!",
+    "image": "https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/41a5d7598899e44111b63455ab2a7c060b379d50/metaxa.jpg",
+    "link": "https://www.google.com/search?q=metaxasauce&sca_esv=aacddb143e8355b1&sxsrf=APpeQntLOwaZb49BHQ7BN61dKjYczgYdxw%3A1792052019371&source=hp&ei=M4vQarK5EILui-gPh97akQw&iflsig=ABILxe8AAAAAatCZQ-NF_HehtenUlslbTWKfHdq044dM&ved=0ahUKEwjynpyAyruXAxUC9wIHHQevNsIQ4dUDCCg&uact=5&oq=metaxasauce&gs_lp=Egdnd3Mtd2l6IgttZXRheGFzYXVjZTIIEAAYgAQYsQMyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI6h5QAFjjHHAAeACQAQCYAYMBoAGgB6oBAzcuNLgBA8gBAPgBAZgCC6ACjAjCAgoQIxjJAhjwBRgnwgILEAAYgAQYsQMYgwHCAggQLhiABBixA8ICBRAuGIAEwgIREAAYgAQYigUYjQYYsQMYgwHCAg4QABiABBiKBRixAxiDAcICGhAuGIAEGIoFGI0GGLEDGIMBGMcBGK8BGI4FwgIOEC4YgAQYsQMYxwEY0QPCAgsQLhiABBjHARivAcICFxAuGIAEGIoFGI0GGLEDGIMBGMcBGNEDwgIOEC4YgAQYtAcYxwEYrwGYAwCSBwM3LjSgB95fsgcDNy40uAeMCMIHBzItOS4xLjHIB06ACAE&sclient=gws-wiz"
+  },
+  {
+    "date": "2024-10-14",
+    "title": "Rückkehr ins Training",
+    "summary": "Nach monatelanger Krankheitspause kam es heute endlich zum Wiedereinstieg ins Training. Die erste Einheit war Ringen.",
+    "image": "https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/3c914f2855cae87326305d3858fb5c4af0b0073b/ringen.jpg",
+    "link": "https://www.muskelkater-gym.de/"
+  },
+  {
+    "date": "2024-10-12",
+    "title": "Persönliche Website im Aufbau",
+    "summary": "Im Rahmen des Moduls Geoinformatik 2 an der Hochschule Mainz wurde eine persönliche Website erstellt. Diese Seite ist noch im Aufbau und wird in den kommenden Wochen weiter ausgebaut.",
+    "image": "https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/3c914f2855cae87326305d3858fb5c4af0b0073b/website.jpg",
+    "link": "https://www.hs-mainz.de/studium/studiengaenge/technik/geoinformatik-bsc/studieren/"
+  }
+  
+]

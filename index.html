@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Über mich | Meine persönliche Webseite</title>
+    <link rel="stylesheet" href="https://irwisst.github.io/geoinformatik2-bilder/style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navbar">
+            <div class="name">
+                Lennard Müller
+            </div>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="active">About</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <button onclick="toggleDarkMode()" class="dark-mode-button"><img src="https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/3c914f2855cae87326305d3858fb5c4af0b0073b/mond.png" width="50" height="50"></button>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="paragraph">
+                Willkommen auf meiner persönlichen Website! Ich bin Lennard Müller und studiere zurzeit an der Hochschule Mainz Geoinformatik und Vermessung.<br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+
+            <div class="cv">
+               <p style="font-weight: bold; font-size: 36;">Werdegang</p> 
+                <table>
+                    <tr>
+                        <th>
+                            Jahr
+                        </th>
+                        <th>
+                            Tätigkeit
+                        </th>
+                        <th>
+                            Ort
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            bis 2022
+                        </td>
+                        <td>
+                            Abitur am Grimmelshausen Gymnasium
+                        </td>
+                        <td>
+                            Gelnhausen
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2022-2024
+                        </td>
+                        <td>
+                            Work and Travel
+                        </td>
+                        <td>
+                            Japan
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2024 bis heute
+                    
+                    <td>
+                        Studium Geoinformatik und Vermessung
+                    </td>
+                    <td>
+                        Hochschule Mainz
+                    </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      <div class="picture">
+        <img src="https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/c49adfe1b3bc2cfa6306d08effcc6f7696031716/PXL_20230528_024741894.jpg">
+           
+      </div> 
+    </div>
+
+     <div class="contact">
+        <div>
+            <a href="https://www.linkedin.com/"><img src="https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/3c914f2855cae87326305d3858fb5c4af0b0073b/in.png"></a>
+        </div>
+        <div>
+            <a href="https://github.com"><img src="https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/3c914f2855cae87326305d3858fb5c4af0b0073b/github.png"></a>
+        </div>
+     </div>
+     
+     
+</body>
+
+
+
+<script>
+    // Dark Mode beim Laden der Seite wiederherstellen
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+
+        // Status speichern
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    }
+</script>
+
+</html>

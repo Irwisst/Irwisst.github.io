@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Über mich | Meine persönliche Webseite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navbar">
+            <div class="name">
+                Lennard Müller
+            </div>
+
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <button onclick="toggleDarkMode()" class="dark-mode-button"><img src="https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/3c914f2855cae87326305d3858fb5c4af0b0073b/mond.png" width="50" height="50"></button>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <h2>Aktuelles<br><br></h2>
+            
+        <div id="news-container"></div>
+        <div id="link"></div>
+
+        <script>
+        
+        fetch('news.json')
+            .then(response => response.json())
+            .then(news => {
+                document.getElementById("news-container").innerHTML =
+                    news.map(item => `
+                        <div class="news-item">
+                            <h3>${item.title}</h3>
+
+                            <img
+                                src="${item.image}"
+                                alt="${item.title}"
+                                class="news-image"
+                            >
+
+                            <p>${item.summary}</p>
+
+                            <a href="${item.link}"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                &#8594; Mehr erfahren
+                            </a>
+                        </div>
+                    `).join("");
+            })
+            .catch(error => console.error("Fehler:", error));
+
+        </script>
+
+           
+
+           
+    </div>
+
+     <div class="contact">
+        <div>
+            <a href="https://www.linkedin.com/"><img src="https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/3c914f2855cae87326305d3858fb5c4af0b0073b/in.png""></a>
+        </div>
+        <div>
+            <a href="https://github.com"><img src="https://raw.githubusercontent.com/Irwisst/geoinformatik2-bilder/3c914f2855cae87326305d3858fb5c4af0b0073b/github.png"></a>
+        </div>
+     </div>
+</body>
+
+
+<script>
+    // Dark Mode beim Laden der Seite wiederherstellen
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+
+        // Status speichern
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    }
+</script>
+
+</html>
